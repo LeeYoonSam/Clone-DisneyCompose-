@@ -26,18 +26,43 @@ android {
                 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+    }
+
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = "11"
     }
+
     buildFeatures {
         compose true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion compose_version
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            returnDefaultValues = true
+        }
+    }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        // 추가 컴파일러 인수 목록 (https://kotlinlang.org/docs/gradle.html#attributes-common-to-jvm-js-and-js-dce)
+        kotlinOptions.freeCompilerArgs += [
+            "-Xopt-in=kotlin.time.ExperimentalTime",
+            "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+            "-Xopt-in=androidx.compose.animation.ExperimentalAnimationApi",
+            "-Xopt-in=androidx.compose.foundation.ExperimentalFoundationApi"
+        ]
     }
 }
 
