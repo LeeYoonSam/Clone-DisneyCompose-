@@ -82,6 +82,12 @@ dependencies {
     // architecture components
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycleVersion"
 
+    // startup
+    implementation "androidx.startup:startup-runtime:$versions.startupVersion"
+
+    // logging
+    implementation "com.jakewharton.timber:timber:$versions.timberVersion"
+
     // test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
