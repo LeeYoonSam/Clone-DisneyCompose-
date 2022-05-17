@@ -81,6 +81,11 @@ dependencies {
 
     // architecture components
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycleVersion"
+    testImplementation "androidx.arch.core:core-testing:$versions.archCompomentVersion"
+
+    // room
+    implementation "androidx.room:room-ktx:$versions.roomVersion"
+    kapt "androidx.room:room-compiler:$versions.roomVersion"
 
     // startup
     implementation "androidx.startup:startup-runtime:$versions.startupVersion"
