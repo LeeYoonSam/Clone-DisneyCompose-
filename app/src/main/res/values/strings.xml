@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Clone-DisneyCompose</string>
+    <string name="database">DisneyCompose.db</string>
 </resources>
