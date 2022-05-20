@@ -43,7 +43,7 @@ class MainRepository @Inject constructor(
 		} else {
 			emit(posters)
 		}
-	}.onStart { onStart() }.onCompletion { onCompletion }.flowOn(Dispatchers.IO)
+	}.onStart { onStart() }.onCompletion { onCompletion() }.flowOn(Dispatchers.IO)
 
 
 }
