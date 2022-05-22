@@ -1,5 +1,6 @@
 package com.ys.clone.disneycompose.ui.details
 
+import android.view.View
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -38,11 +39,13 @@ import androidx.compose.ui.text.style.TextOverflow.Companion
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.palette.graphics.Palette
+import com.skydoves.balloon.Balloon
 import com.skydoves.landscapist.ShimmerParams
 import com.skydoves.landscapist.coil.CoilImage
 import com.skydoves.landscapist.palette.BitmapPalette
 import com.ys.clone.disneycompose.extensions.paletteColorList
 import com.ys.clone.disneycompose.model.Poster
+import com.ys.clone.disneycompose.ui.custom.ImageBalloonAnchor
 import com.ys.clone.disneycompose.ui.theme.Background800
 import com.ys.clone.disneycompose.ui.theme.ShimmerHighLight
 import com.ys.clone.disneycompose.utils.NetworkImage
@@ -147,6 +150,15 @@ private fun PosterDetailsBody(
 					.constrainAs(gif) {
 						top.linkTo(gifTitle.bottom)
 					}
+			)
+
+			ImageBalloonAnchor(
+				reference = image,
+				modifier = Modifier
+					.fillMaxWidth()
+					.aspectRatio(0.85f),
+				content = poster.name,
+				onClick = { balloon, anchor -> balloon.showAlignBottom(anchor) }
 			)
 
 			Icon(
