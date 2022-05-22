@@ -1,6 +1,5 @@
 package com.ys.clone.disneycompose.ui.details
 
-import android.view.View
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -35,19 +34,17 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.text.style.TextOverflow.Companion
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.palette.graphics.Palette
-import com.skydoves.balloon.Balloon
 import com.skydoves.landscapist.ShimmerParams
 import com.skydoves.landscapist.coil.CoilImage
 import com.skydoves.landscapist.palette.BitmapPalette
 import com.ys.clone.disneycompose.extensions.paletteColorList
 import com.ys.clone.disneycompose.model.Poster
 import com.ys.clone.disneycompose.ui.custom.ImageBalloonAnchor
-import com.ys.clone.disneycompose.ui.theme.Background800
-import com.ys.clone.disneycompose.ui.theme.ShimmerHighLight
+import com.ys.clone.disneycompose.ui.theme.background800
+import com.ys.clone.disneycompose.ui.theme.shimmerHighLight
 import com.ys.clone.disneycompose.utils.NetworkImage
 
 @Composable
@@ -139,8 +136,8 @@ private fun PosterDetailsBody(
 			CoilImage(
 				imageModel = poster.gif,
 				shimmerParams = ShimmerParams(
-					baseColor = Background800,
-					highlightColor = ShimmerHighLight
+					baseColor = background800,
+					highlightColor = shimmerHighLight
 				),
 				modifier = Modifier
 					.fillMaxWidth()

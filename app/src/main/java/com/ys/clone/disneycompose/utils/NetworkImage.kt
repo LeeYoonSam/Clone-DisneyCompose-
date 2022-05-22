@@ -15,7 +15,7 @@ import com.skydoves.landscapist.ShimmerParams
 import com.skydoves.landscapist.coil.CoilImage
 import com.skydoves.landscapist.palette.BitmapPalette
 import com.ys.clone.disneycompose.R
-import com.ys.clone.disneycompose.ui.theme.ShimmerHighLight
+import com.ys.clone.disneycompose.ui.theme.shimmerHighLight
 
 /**
  * 기본 [contentScale]을 설정하고 디즈니 포스터 이미지를 로드할 때 indicator를 표시하는 [CoilImage]의 래퍼.
@@ -40,7 +40,7 @@ fun NetworkImage(
 		previewPlaceholder = R.drawable.poster,
 		shimmerParams = ShimmerParams(
 			baseColor = MaterialTheme.colors.background,
-			highlightColor = ShimmerHighLight,
+			highlightColor = shimmerHighLight,
 			dropOff = 0.65f
 		),
 		failure = {

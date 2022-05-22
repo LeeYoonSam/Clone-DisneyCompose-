@@ -30,7 +30,7 @@ val DarkTypography = Typography(
 	body2 = TextStyle(
 		fontFamily = FontFamily.Default,
 		fontWeight = FontWeight.Normal,
-		color = White87,
+		color = white87,
 		fontSize = 14.sp
 	)
 )
@@ -40,25 +40,25 @@ val LightTypography = Typography(
 	h1 = TextStyle(
 		fontFamily = FontFamily.Default,
 		fontWeight = FontWeight.Bold,
-		color = Background900,
+		color = background900,
 		fontSize = 28.sp
 	),
 	h2 = TextStyle(
 		fontFamily = FontFamily.Default,
 		fontWeight = FontWeight.Bold,
-		color = Background900,
+		color = background900,
 		fontSize = 21.sp
 	),
 	body1 = TextStyle(
 		fontFamily = FontFamily.Default,
 		fontWeight = FontWeight.Normal,
-		color = Background800,
+		color = background800,
 		fontSize = 14.sp
 	),
 	body2 = TextStyle(
 		fontFamily = FontFamily.Default,
 		fontWeight = FontWeight.Normal,
-		color = Background800,
+		color = background800,
 		fontSize = 14.sp
 	)
 )

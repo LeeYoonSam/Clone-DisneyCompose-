@@ -27,7 +27,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.font.FontWeight.Companion
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -38,7 +37,7 @@ import com.ys.clone.disneycompose.R
 import com.ys.clone.disneycompose.extensions.visible
 import com.ys.clone.disneycompose.model.Poster
 import com.ys.clone.disneycompose.ui.main.MainViewModel
-import com.ys.clone.disneycompose.ui.theme.Purple200
+import com.ys.clone.disneycompose.ui.theme.purple200
 
 @Composable
 fun Posters(
@@ -59,7 +58,7 @@ fun Posters(
 			modifier = Modifier.constrainAs(body) { top.linkTo(parent.top) },
 			bottomBar = {
 				BottomNavigation(
-					backgroundColor = Purple200,
+					backgroundColor = purple200,
 					modifier = Modifier
 						.navigationBarsHeight(56.dp)
 				) {
@@ -105,7 +104,7 @@ fun Posters(
 private fun PosterAppBar() {
 	TopAppBar(
 		elevation = 6.dp,
-		backgroundColor = Purple200,
+		backgroundColor = purple200,
 		modifier = Modifier.height(58.dp)
 	) {
 		Text(
