@@ -10,6 +10,7 @@ import androidx.navigation.navArgument
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.ys.clone.disneycompose.ui.details.PosterDetails
 import com.ys.clone.disneycompose.ui.posters.Posters
+import com.ys.clone.disneycompose.ui.settings.Settings
 
 @Composable
 fun DisneyMainScreen() {
@@ -52,4 +53,6 @@ sealed class NavScreen(val route: String) {
 
 		const val argument0: String = "posterId"
 	}
+
+	object Settings : NavScreen("Settings")
 }

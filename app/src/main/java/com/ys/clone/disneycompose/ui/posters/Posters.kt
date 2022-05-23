@@ -17,6 +17,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.LibraryAdd
 import androidx.compose.material.icons.filled.Radio
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.primarySurface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -37,6 +38,7 @@ import com.ys.clone.disneycompose.R
 import com.ys.clone.disneycompose.extensions.visible
 import com.ys.clone.disneycompose.model.Poster
 import com.ys.clone.disneycompose.ui.main.MainViewModel
+import com.ys.clone.disneycompose.ui.settings.Settings
 import com.ys.clone.disneycompose.ui.theme.purple200
 
 @Composable
@@ -82,6 +84,7 @@ fun Posters(
 					DisneyHomeTab.HOME -> HomePosters(modifier, posters, selectPoster)
 					DisneyHomeTab.RADIO -> RadioPosters(modifier, posters, selectPoster)
 					DisneyHomeTab.LIBRARY -> LibraryPosters(modifier, posters, selectPoster)
+					DisneyHomeTab.SETTINGS -> Settings(modifier)
 				}
 			}
 		}
@@ -125,13 +128,15 @@ enum class DisneyHomeTab(
 ) {
 	HOME(R.string.menu_home, Icons.Filled.Home),
 	RADIO(R.string.menu_radio, Icons.Filled.Radio),
-	LIBRARY(R.string.menu_library, Icons.Filled.LibraryAdd);
+	LIBRARY(R.string.menu_library, Icons.Filled.LibraryAdd),
+	SETTINGS(R.string.menu_settings, Icons.Filled.Settings);
 
 	companion object {
 		fun getTabFromResource(@StringRes resource: Int): DisneyHomeTab {
 			return when(resource) {
 				R.string.menu_radio -> RADIO
 				R.string.menu_library -> LIBRARY
+				R.string.menu_settings -> SETTINGS
 				else -> HOME
 			}
 		}
