@@ -32,6 +32,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.accompanist.insets.navigationBarsHeight
 import com.google.accompanist.insets.navigationBarsPadding
 import com.ys.clone.disneycompose.R
@@ -84,7 +85,7 @@ fun Posters(
 					DisneyHomeTab.HOME -> HomePosters(modifier, posters, selectPoster)
 					DisneyHomeTab.RADIO -> RadioPosters(modifier, posters, selectPoster)
 					DisneyHomeTab.LIBRARY -> LibraryPosters(modifier, posters, selectPoster)
-					DisneyHomeTab.SETTINGS -> Settings(modifier)
+					DisneyHomeTab.SETTINGS -> Settings(modifier, hiltViewModel())
 				}
 			}
 		}

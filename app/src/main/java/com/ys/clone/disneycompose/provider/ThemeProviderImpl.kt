@@ -36,7 +36,7 @@ class ThemeProviderImpl @Inject constructor(
 	}
 
 	override var theme: ThemeProvider.Theme
-		get() = getThemeForStorageValue(sharedPreferences.getString(KEY_THEME, defaultThemeValue)!!)
+		get() = getThemeForStorageValue(sharedPreferences.getString(KEY_THEME, defaultThemeValue) ?: defaultThemeValue)
 		set(value) = sharedPreferences.edit {
 			putString(KEY_THEME, value.storageKey)
 		}

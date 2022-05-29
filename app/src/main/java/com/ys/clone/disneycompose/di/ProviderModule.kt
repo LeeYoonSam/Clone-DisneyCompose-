@@ -1,6 +1,8 @@
 package com.ys.clone.disneycompose.di
 
 import android.content.Context
+import com.ys.clone.disneycompose.provider.ResourceProvider
+import com.ys.clone.disneycompose.provider.ResourceProviderImpl
 import com.ys.clone.disneycompose.provider.ThemeProvider
 import com.ys.clone.disneycompose.provider.ThemeProviderImpl
 import dagger.Module
@@ -20,5 +22,13 @@ object ProviderModule {
 		@ApplicationContext context: Context
 	): ThemeProvider {
 		return ThemeProviderImpl(context)
+	}
+
+	@Provides
+	@Singleton
+	fun provideResourceProvider(
+		@ApplicationContext context: Context
+	): ResourceProvider {
+		return ResourceProviderImpl(context)
 	}
 }

@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Switch
 import androidx.compose.material.Text
@@ -18,31 +19,34 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.google.accompanist.insets.statusBarsPadding
 
 @Composable
-fun Settings(modifier: Modifier) {
+fun Settings(
+	modifier: Modifier,
+	viewModel: SettingsViewModel
+) {
 	Column(
 		modifier = modifier
 			.statusBarsPadding()
 			.padding(16.dp)
 			.verticalScroll(rememberScrollState())
 	) {
-		SwitchSetting("Dark Theme")
+		SwitchSetting(viewModel)
 	}
 }
 
 @Composable
 fun SwitchSetting(
-	switchTitle: String,
+	viewModel: SettingsViewModel
 ) {
-	var isDarkMode by remember { mutableStateOf(false) }
+	var isDarkMode by remember { mutableStateOf(viewModel.isNightMode()) }
 
 	Surface(
 		elevation = 8.dp,
+		color = MaterialTheme.colors.onBackground,
 		shape = RoundedCornerShape(8.dp)
 	) {
 		Row(
@@ -56,15 +60,16 @@ fun SwitchSetting(
 					.fillMaxWidth()
 					.weight(1f)
 					.align(Alignment.CenterVertically),
-				text = switchTitle,
-				color = Color.Black,
-				fontSize = 14.sp,
+				text = viewModel.darkModeTitle,
+				style = MaterialTheme.typography.body1,
+				fontWeight = FontWeight.Normal
 			)
 
 			Switch(
 				checked = isDarkMode,
 				onCheckedChange = {
 					isDarkMode = !isDarkMode
+					viewModel.saveThemeMode(isDarkMode)
 				}
 			)
 		}
