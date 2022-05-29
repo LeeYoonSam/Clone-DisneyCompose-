@@ -118,6 +118,9 @@ dependencies {
     // compose compatibles
     implementation "com.github.skydoves:orchestra-balloon:$versions.orchestraVersion"
 
+    // security shared preference
+    implementation "androidx.security:security-crypto-ktx:$versions.securityPrefVersion"
+
     // test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
